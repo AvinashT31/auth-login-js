@@ -20,5 +20,15 @@
     </form>
 
     <script src="server.js"></script>
+
+    <script>
+        window.onload = function(){
+            var dataFromLS = JSON.parse(localStorage.getItem("cuser"));
+            if(dataFromLS){
+                window.location.href="/index.html"
+                alert("already logged");
+            }
+        }
+    </script>
 </body>
 </html>

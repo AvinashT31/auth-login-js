@@ -35,6 +35,7 @@ function register(event) {
     else {
         dataFromLS.push(userList);
         localStorage.setItem("userInfo", JSON.stringify(dataFromLS));
+        window.location.href = "/login.html";
         document.getElementById("userName").value = "";
         document.getElementById("userEmail").value = "";
         document.getElementById("userNumber").value = "";
@@ -63,8 +64,17 @@ function login(event) {
         }
     }
     // console.log("got it")
-    if (flag) {
+    if (flag === true) {
+        document.getElementById("userEmail").value = '';
+        document.getElementById("userPassword").value = '';
+
+        var user = {}
+        user["current-user-email"] = userEmail;
+        console.log(user, "user");
+        localStorage.setItem("cuser", JSON.stringify(user));
+        window.location.href = "/index.html";
         alert("login successfully")
+   
     }
     else {
         alert("please check credentials or please register first")
@@ -89,7 +99,7 @@ function forgetPassword(event) {
     flag = false
 
     for (var i = 0; i < dataFromLS.length; i++) {
-        if (dataFromLS[i].Email === GettingEmail) {
+        if (dataFromLS[i].Email === userEmail) {
             flag = true
         }
     }
