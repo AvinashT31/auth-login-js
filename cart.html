@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carts</title>
+</head>
+<body>
+    <div id="carprpduct">
+
+    </div>
+
+
+    <script>
+       
+       window.onload = function(){
+      
+        var DataFromLS = JSON.parse(localStorage.getItem("cuser"));
+
+        if(!DataFromLS){
+            window.location.href="/login.html"
+            alert("please login first")
+        }
+        else{
+             
+            var divFromHTML = document.getElementById("carprpduct");
+            console.log(divFromHTML, "divFromHTML");
+            
+            var DataFromLS = JSON.parse(localStorage.getItem("userInfo"))
+            console.log(DataFromLS, "DataFromLS");
+
+            var CurrentUser = JSON.parse(localStorage.getItem("cuser"));
+            console.log(CurrentUser, "CurrentUser");
+
+            
+
+        }
+
+
+
+
+
+       }
+
+
+
+
+
+    </script>
+</body>
+</html>
